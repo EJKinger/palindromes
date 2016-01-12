@@ -1,0 +1,25 @@
+{
+  "name": "palindromes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "palindromes.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EJKinger/palindromes.git"
+  },
+  "author": "Eric King",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EJKinger/palindromes/issues"
+  },
+  "homepage": "https://github.com/EJKinger/palindromes#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "jquery": "^2.2.0",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2"
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css">
+    <script src="node_modules/mocha/mocha.js"></script>
+    <script src="node_modules/chai/chai.js"></script>
+    <script src="node_modules/sinon/lib/sinon.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      mocha.setup('bdd');
+      window.expect = chai.expect;
+      $(function() {
+        window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
+      });
+    </script>
+    <script src="palindromes.js"></script>
+    <script src="Spec.js"></script>
+  </head>
+
+
+  <body>
+    <div id="mocha"></div>
+  </body>
+</html>
