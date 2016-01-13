@@ -1,7 +1,7 @@
-var Palindrome = (() => {
-  "use strict";
+"use strict";
+var Palindrome = {
   //checks if word is a a palindrome, returns boolean
-  var isPalindrome = function(word){
+  isPalindrome: word => {
     if (typeof word === 'number'){
       word = String(word);
     }
@@ -10,32 +10,31 @@ var Palindrome = (() => {
       return word.replace(/\s/, '').toLowerCase() === 
         word.split('').reverse().join('').replace(/\s/, '').toLowerCase();
     } else return false;
-  };
+  },
 
   //returns the factorial of a number, returns NaN for negative and fractional numbers
-  var factorial = (function() {
+  factorial: (() => {
     var mem = {0: 1, 1: 1};
     return function(num){
       if (num in mem) {
         return mem[num];
       }
       if (num >= 0 && num % 1 === 0 && typeof num === 'number') {
-        mem[num] = num * factorial(num - 1);
+        mem[num] = num * Palindrome.factorial(num - 1);
         return mem[num];
       } else return NaN; 
     };
     
-  })();
+  })(),
 
   //returns the factorial of the number of palindromes within an array
-  var palindromeFactorial = function(arr){
+  palindromeFactorial: arr => {
     if(Array.isArray(arr)){
-      return factorial(arr.filter( (item) => {
-        return isPalindrome(item);
+      return Palindrome.factorial(arr.filter( item => {
+        return Palindrome.isPalindrome(item);
       }).length);
     } else return NaN;
-  };
+  }
+};
 
-  //returns an object, makes these methods available
-  return {isPalindrome, factorial, palindromeFactorial};
-})();
+export default Palindrome;

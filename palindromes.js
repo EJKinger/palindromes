@@ -1,10 +1,11 @@
-'use strict';
+"use strict";
 
-var Palindrome = function () {
-  "use strict";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var Palindrome = {
   //checks if word is a a palindrome, returns boolean
-
-  var isPalindrome = function isPalindrome(word) {
+  isPalindrome: function isPalindrome(word) {
     if (typeof word === 'number') {
       word = String(word);
     }
@@ -12,31 +13,30 @@ var Palindrome = function () {
     if (typeof word === 'string') {
       return word.replace(/\s/, '').toLowerCase() === word.split('').reverse().join('').replace(/\s/, '').toLowerCase();
     } else return false;
-  };
+  },
 
   //returns the factorial of a number, returns NaN for negative and fractional numbers
-  var factorial = function () {
+  factorial: function () {
     var mem = { 0: 1, 1: 1 };
     return function (num) {
       if (num in mem) {
         return mem[num];
       }
       if (num >= 0 && num % 1 === 0 && typeof num === 'number') {
-        mem[num] = num * factorial(num - 1);
+        mem[num] = num * Palindrome.factorial(num - 1);
         return mem[num];
       } else return NaN;
     };
-  }();
+  }(),
 
   //returns the factorial of the number of palindromes within an array
-  var palindromeFactorial = function palindromeFactorial(arr) {
+  palindromeFactorial: function palindromeFactorial(arr) {
     if (Array.isArray(arr)) {
-      return factorial(arr.filter(function (item) {
-        return isPalindrome(item);
+      return Palindrome.factorial(arr.filter(function (item) {
+        return Palindrome.isPalindrome(item);
       }).length);
     } else return NaN;
-  };
+  }
+};
 
-  //returns an object, makes these methods available
-  return { isPalindrome: isPalindrome, factorial: factorial, palindromeFactorial: palindromeFactorial };
-}();
+exports.default = Palindrome;

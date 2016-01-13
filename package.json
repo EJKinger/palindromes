@@ -4,7 +4,8 @@
   "description": "",
   "main": "palindromes.js",
   "scripts": {
-    "watch": "babel --presets es2015 es6/palindromes.js --watch --out-file palindromes.js"
+    "watch": "babel --presets es2015 es6/ --watch --out-dir ./",
+    "webpack": "webpack entry.js bundle.js"
   },
   "repository": {
     "type": "git",
