@@ -5,10 +5,10 @@
 
 ## Table of Contents
 
-1. [Dev Requirements](#Dev Requirements)
+1. [Dev Requirements](#dev-requirements)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
-    2. [Getting Started](#Getting-started)
+    2. [Getting Started](#getting-started)
 
 
 ## Dev Requirements
