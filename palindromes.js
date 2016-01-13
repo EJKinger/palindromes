@@ -1,6 +1,5 @@
-"use strict";
-
 var Palindrome = (function(){
+  "use strict";
   //checks if word is a a palindrome, returns boolean
   var isPalindrome = function(word){
     if (word === '') return false;
