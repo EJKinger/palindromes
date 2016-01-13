@@ -1,2 +1,2 @@
-document.write(require("./palindromes.js"));
-document.write(require("./Spec.js"));
+require("./palindromes.js");
+require("./Spec.js");

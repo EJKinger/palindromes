@@ -27,4 +27,4 @@
  - open `SpecRunner.html` in browser
  - `es6/palindromes.js` contains es6 version
  - `npm run watch` will transpile es6/palindromes.js to palindromes.js as you save changes
- - `palindromes.js` contains program logic
+ - 'npm run webpack' will bundle Spec.js and palindromes.js into bundle.js
