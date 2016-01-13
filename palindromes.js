@@ -10,13 +10,11 @@ var Palindrome = (function(){
 
   //returns the factorial of a number, returns NaN for negative and fractional numbers
   var factorial = function(num){
-    if (typeof num === 'number') {
-      if (num === 0) return 1;
-      if (num < 0 || num % 1 !== 0) return undefined;
-      for (var i = num - 1; i >= 1; i--){
-        num *= i;
+    if (typeof num === 'number' && num >= 0){
+      if (num === 1 || num === 0){
+        return 1;
       }
-      return num;
+      return num *= factorial(num - 1);
     } else return NaN;
   };
 
