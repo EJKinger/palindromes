@@ -5,11 +5,10 @@
 
 ## Table of Contents
 
-1. [Requirements](#requirements)
+1. [Dev Requirements](#Dev Requirements)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
-1. [Contributing](#contributing)
-1. [Team](#engineering-team)
+    2. [Getting Started](#Getting-started)
 
 
 ## Dev Requirements

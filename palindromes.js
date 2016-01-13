@@ -2,19 +2,25 @@ var Palindrome = (function(){
   "use strict";
   //checks if word is a a palindrome, returns boolean
   var isPalindrome = function(word){
-    if (word === '') return false;
+    if (typeof word === 'number'){
+      word = String(word);
+    }
+    if (word === '' || word.length === 1) return false;
     if (typeof word === 'string'){
-      return word.replace(/\s/, '') === word.split('').reverse().join('').replace(/\s/, '');
+      return word.replace(/\s/, '').toLowerCase() === 
+        word.split('').reverse().join('').replace(/\s/, '').toLowerCase();
     } else return false;
   };
 
   //returns the factorial of a number, returns NaN for negative and fractional numbers
   var factorial = function(num){
-    if (typeof num === 'number' && num >= 0){
-      if (num === 1 || num === 0){
-        return 1;
-      }
-      return num *= factorial(num - 1);
+    var mem = {0: 1, 1: 1};
+    if (num in mem){
+      return mem[num];
+    }
+    if (num >= 0 && typeof num === 'number'){
+      mem[num] = num * factorial(num - 1);
+      return mem[num];
     } else return NaN;
   };
 
