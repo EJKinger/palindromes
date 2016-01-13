@@ -13,16 +13,18 @@ var Palindrome = (function(){
   };
 
   //returns the factorial of a number, returns NaN for negative and fractional numbers
-  var factorial = function(num){
+  var factorial = (function(){
     var mem = {0: 1, 1: 1};
-    if (num in mem){
-      return mem[num];
-    }
-    if (num >= 0 && typeof num === 'number'){
-      mem[num] = num * factorial(num - 1);
-      return mem[num];
-    } else return NaN;
-  };
+    return function(num){
+      if (num in mem){
+        return mem[num];
+      }
+      if (num >= 0 && typeof num === 'number'){
+        mem[num] = num * factorial(num - 1);
+        return mem[num];
+      } else return NaN;
+    };
+  })();
 
   //returns the factorial of the number of palindromes within an array
   var palindromeFactorial = function(arr){
